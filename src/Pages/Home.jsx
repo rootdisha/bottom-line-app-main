@@ -1,29 +1,34 @@
 import React from 'react'
 import Header from '../Components/Header'
+import ServicesGrid from '../Components/ServicesGrid.jsx'
 import Aboutus from "../Components/Aboutus"
 import Brand from "../Components/Brand"
 import StatsSection from "../Components/StatsSection"
-import PortfolioSection from "../Components/PortfolioSection"
-import ServiceGridfrom from "../Components/ServiceGrid.jsx"
 import Testimonial from "../Components/Testimonial.jsx"
 import ContactFAQ from "../Components/ContactFAQ.jsx"
-import YearsOfOrganization from '../Components/YearsOfOrganization.jsx'
-import TeamCarousel from '../Components/TeamCarousel.jsx'
-import ServicesGrid from '../Components/ServicesGrid.jsx'
 
 const Home = () => {
   return (
     <div>
+      {/* Hero Section */}
       <Header />
+
+      {/* Solutions & Services Overview */}
       <ServicesGrid />
+
+      {/* Brief About Us */}
       <Aboutus />
+
+      {/* Client Logos */}
       <Brand />
+
+      {/* Stats/Metrics */}
       <StatsSection />
-      <TeamCarousel />
-      <ServiceGridfrom />
-      <YearsOfOrganization />
-      <PortfolioSection />
+
+      {/* Client Testimonials */}
       <Testimonial />
+
+      {/* Contact & FAQ */}
       <ContactFAQ />
     </div>
   )

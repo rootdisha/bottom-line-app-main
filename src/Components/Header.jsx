@@ -56,9 +56,9 @@ const HeroSection = () => {
             className="text-5xl md:text-7xl mb-6 leading-tight"
             variants={fadeInUp}
           >
-            Digital & Cybersecurity
+            At the forefront of
             <br />
-            <span className="text-blue-300">Transformation Experts</span>
+            <span className="text-blue-300">Digital & Cybersecurity Transformation</span>
           </motion.h1>
 
           {/* Paragraph */}
@@ -66,13 +66,14 @@ const HeroSection = () => {
             className="text-white/80 font-[poppins] mb-8 text-lg"
             variants={fadeInUp}
           >
-            Bottomline Technologies is at the forefront of IT infrastructure
-            transformation, delivering secure, scalable, and innovative solutions
-            that power businesses across industries.{" "}
+            Bottomline Technologies is one of India's leading firms that has helped transform
+            the IT Infrastructure for hundreds of clients. We deliver secure, scalable, and
+            innovative solutions through our unique approach to{" "}
             <span className="font-bold">
-              One of India’s leading firms that has helped transform the IT
-              Infrastructure for hundreds of clients.
+              'Choosing The Right Technology'
             </span>
+            {" "}— helping clients create competitive advantage through organizational agility
+            and lower total cost of design.
           </motion.p>
 
           {/* Buttons */}

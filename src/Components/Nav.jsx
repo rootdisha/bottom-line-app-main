@@ -39,6 +39,29 @@ const StickyNavbar = () => {
           <div className={`md:flex md:items-center md:space-x-6 ${menuOpen ? 'block' : 'hidden'} md:block`}>
             <Link to="/" className="block py-2 text-gray-700 hover:text-blue-600">Home</Link>
 
+            {/* Solutions Dropdown */}
+            <div className="relative group">
+              <button
+                onClick={() => toggleSub('solutions')}
+                className="flex items-center py-2 text-gray-700 hover:text-blue-600"
+              >
+                Solutions
+              </button>
+
+              <div
+                className={`
+                  absolute md:top-full md:pt-2 w-56
+                  ${isMobile ? (activeSub === 'solutions' ? 'block' : 'hidden') : 'hidden group-hover:block'}
+                `}
+              >
+                <div className="bg-white rounded-md shadow-md p-2 space-y-1">
+                  <Link to="/solutions/hci" className="block text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-2 py-1 rounded">Hyper Converged Infrastructure</Link>
+                  <Link to="/solutions/networking" className="block text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-2 py-1 rounded">Networking</Link>
+                  <Link to="/solutions/data-centre" className="block text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-2 py-1 rounded">Data Centre</Link>
+                </div>
+              </div>
+            </div>
+
             {/* Services Dropdown */}
             <div className="relative group">
               <button
@@ -50,12 +73,20 @@ const StickyNavbar = () => {
 
               <div
                 className={`
-                  absolute md:top-full mt-1 w-40 bg-white rounded-md shadow-md p-2 space-y-1
+                  absolute md:top-full md:pt-2 w-48
                   ${isMobile ? (activeSub === 'services' ? 'block' : 'hidden') : 'hidden group-hover:block'}
                 `}
               >
-                <Link to="/web" className="block text-sm text-gray-600 hover:text-blue-500">Web Design</Link>
-                <Link to="/seo" className="block text-sm text-gray-600 hover:text-blue-500">SEO</Link>
+                <div className="bg-white rounded-md shadow-md p-2 space-y-1">
+                  <Link to="/services/storage" className="block text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-2 py-1 rounded">Data Storage</Link>
+                  <Link to="/services/server" className="block text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-2 py-1 rounded">Server Infrastructure</Link>
+                  <Link to="/services/disaster-recovery" className="block text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-2 py-1 rounded">Disaster Recovery</Link>
+                  <Link to="/services/virtualization" className="block text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-2 py-1 rounded">Virtualization</Link>
+                  <Link to="/services/backup" className="block text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-2 py-1 rounded">Backup & DR</Link>
+                  <Link to="/services/migration" className="block text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-2 py-1 rounded">Migration</Link>
+                  <Link to="/services/mobility" className="block text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-2 py-1 rounded">Mobility</Link>
+                  <Link to="/services/security" className="block text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-2 py-1 rounded">Security</Link>
+                </div>
               </div>
             </div>
 
@@ -70,15 +101,18 @@ const StickyNavbar = () => {
 
               <div
                 className={`
-                  absolute md:top-full mt-1 w-40 bg-white rounded-md shadow-md p-2 space-y-1
+                  absolute md:top-full md:pt-2 w-40
                   ${isMobile ? (activeSub === 'about' ? 'block' : 'hidden') : 'hidden group-hover:block'}
                 `}
               >
-                <Link to="/team" className="block text-sm text-gray-600 hover:text-blue-500">Team</Link>
-                <Link to="/mission" className="block text-sm text-gray-600 hover:text-blue-500">Mission</Link>
+                <div className="bg-white rounded-md shadow-md p-2 space-y-1">
+                  <Link to="/about" className="block text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-2 py-1 rounded">About Us</Link>
+                  <Link to="/about#team" className="block text-sm text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-2 py-1 rounded">Our Team</Link>
+                </div>
               </div>
             </div>
 
+            <Link to="/portfolio" className="block py-2 text-gray-700 hover:text-blue-600">Portfolio</Link>
             <Link to="/contact" className="block py-2 text-gray-700 hover:text-blue-600">Contact</Link>
           </div>
         </div>
