@@ -1,11 +1,11 @@
-// components/TestimonialCarousel.jsx
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
-import { motion } from "framer-motion";
-import { FaQuoteLeft } from "react-icons/fa";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+// components/TestimonialCarousel"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Pagination, Navigation, Autoplay } from "swiper/modules"
+import { motion } from "framer-motion"
+import { FaQuoteLeft } from "react-icons/fa"
+import "swiper/css"
+import "swiper/css/pagination"
+import "swiper/css/navigation"
 
 const testimonials = [
   {
@@ -26,7 +26,7 @@ const testimonials = [
     text: "They crafted a compelling brand identity and helped scale our audience with data-driven campaigns.",
     img: "https://randomuser.me/api/portraits/women/65.jpg",
   },
-];
+]
 
 export default function TestimonialCarousel() {
   return (
@@ -83,5 +83,5 @@ export default function TestimonialCarousel() {
         ))}
       </Swiper>
     </div>
-  );
+  )
 }

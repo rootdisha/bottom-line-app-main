@@ -1,25 +1,25 @@
-import { motion, useAnimation, useInView } from "framer-motion";
-import { useRef, useEffect } from "react";
-import BgImg from "../Images/colleagues-working-together-project.jpg";
-import TeamImg from "../Images/WhatsApp Image 2025-08-19 at 10.32.18 AM.jpeg";
+import { motion, useAnimation, useInView } from "framer-motion"
+import { useRef, useEffect } from "react"
+import BgImg from "../Images/colleagues-working-together-project.jpg"
+import TeamImg from "../Images/WhatsApp Image 2025-08-19 at 10.32.18 AM.jpeg"
 
 export default function ExperienceSection() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: false, amount: 0.3 });
-  const controls = useAnimation();
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: false, amount: 0.3 })
+  const controls = useAnimation()
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible");
+      controls.start("visible")
     } else {
-      controls.start("hidden");
+      controls.start("hidden")
     }
-  }, [inView, controls]);
+  }, [inView, controls])
 
   const fadeIn = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-  };
+  }
 
   return (
     <section
@@ -110,5 +110,5 @@ export default function ExperienceSection() {
         </motion.div>
       </div>
     </section>
-  );
+  )
 }

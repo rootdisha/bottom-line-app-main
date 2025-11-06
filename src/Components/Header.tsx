@@ -1,26 +1,27 @@
-import React from "react";
-import { motion } from "framer-motion";
-import Lottie from "lottie-react";
-import Hea from "../Anime/Hea.json";
-import New from "../Images/gray-fluid-background-frame.png";
+import { motion } from "framer-motion"
+import Lottie from "lottie-react"
+import Hea from "../Anime/Hea.json"
+import New from "../Images/gray-fluid-background-frame.png"
+
+import type { Variants } from "framer-motion"
 
 // Variants
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: { staggerChildren: 0.3 },
   },
-};
+}
 
-const fadeInUp = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
     transition: { duration: 0.8, ease: "easeOut" },
   },
-};
+}
 
 const HeroSection = () => {
   return (
@@ -101,7 +102,7 @@ const HeroSection = () => {
         </motion.div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HeroSection;
+export default HeroSection

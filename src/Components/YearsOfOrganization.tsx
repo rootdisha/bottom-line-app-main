@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { FaStar } from "react-icons/fa";
+import { motion } from "framer-motion"
+import { FaStar } from "react-icons/fa"
 
 export default function YearsOfOrganization() {
   return (
@@ -39,5 +39,5 @@ export default function YearsOfOrganization() {
         </motion.div>
       </div>
     </section>
-  );
+  )
 }

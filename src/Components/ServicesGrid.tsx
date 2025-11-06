@@ -1,6 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 import {
   FaServer,
   FaNetworkWired,
@@ -13,24 +12,33 @@ import {
   FaCloudDownloadAlt,
   FaLayerGroup,
   FaCube
-} from "react-icons/fa";
+} from "react-icons/fa"
+import type { ReactElement } from "react"
+import type { Variants } from "framer-motion"
 
-const staggerContainer = {
+interface ServiceItem {
+  icon: ReactElement
+  title: string
+  description: string
+  link: string
+}
+
+const staggerContainer: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.15 } },
-};
+}
 
-const cardVariant = {
+const cardVariant: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: (i) => ({
+  visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.15, duration: 0.6, type: "spring" },
+    transition: { delay: i * 0.15, duration: 0.6, type: "spring" as const },
   }),
-};
+}
 
 const ServicesGrid = () => {
-  const solutions = [
+  const solutions: ServiceItem[] = [
     {
       icon: <FaLayerGroup size={40} />,
       title: "Hyper Converged Infrastructure",
@@ -49,9 +57,9 @@ const ServicesGrid = () => {
       description: "Design, deploy, optimize and support data centers",
       link: "/solutions/data-centre"
     },
-  ];
+  ]
 
-  const services = [
+  const services: ServiceItem[] = [
     {
       icon: <FaHdd size={40} />,
       title: "Data Storage",
@@ -100,7 +108,7 @@ const ServicesGrid = () => {
       description: "Comprehensive network and information security",
       link: "/services/security"
     },
-  ];
+  ]
 
   return (
     <div className="bg-gray-50 py-20 font-[poppins]">
@@ -190,7 +198,7 @@ const ServicesGrid = () => {
         </motion.div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ServicesGrid;
+export default ServicesGrid

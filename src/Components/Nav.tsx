@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import logo from "../Images/logo.png"
 
 const navVariants = {
   hidden: { y: -100, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 75 } },
-};
+  visible: { y: 0, opacity: 1, transition: { type: 'spring' as const, stiffness: 75 } },
+}
+
+type SubmenuName = 'solutions' | 'services' | 'about'
 
 const StickyNavbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSub, setActiveSub] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSub, setActiveSub] = useState<SubmenuName | null>(null)
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const toggleSub = (name) => setActiveSub(activeSub === name ? null : name);
+  const toggleMenu = () => setMenuOpen(!menuOpen)
+  const toggleSub = (name: SubmenuName) => setActiveSub(activeSub === name ? null : name)
 
-  const isMobile = window.innerWidth < 768;
+  const isMobile = window.innerWidth < 768
 
   return (
     <motion.nav
@@ -118,7 +120,7 @@ const StickyNavbar = () => {
         </div>
       </div>
     </motion.nav>
-  );
-};
+  )
+}
 
-export default StickyNavbar;
+export default StickyNavbar

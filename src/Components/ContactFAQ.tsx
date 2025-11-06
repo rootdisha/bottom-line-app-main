@@ -1,13 +1,13 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion } from "framer-motion"
+import { useState } from "react"
 
 export default function ContactFAQ() {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(null)
   const faqs = [
     "How can I tell if using AI is the right solution for my problem?",
     "How long does an AI solution take to implement?",
     "Will we need to make changes in our teams?"
-  ];
+  ]
 
   return (
     <div className="bg-gray-50 py-12 px-6 md:px-24 min-screen font-[poppins]">
@@ -97,5 +97,5 @@ Chennai, Tamil Nadu 600101
         </div>
       </motion.div>
     </div>
-  );
+  )
 }

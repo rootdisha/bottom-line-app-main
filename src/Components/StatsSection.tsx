@@ -1,40 +1,40 @@
-import { motion } from "framer-motion";
-import { useEffect, useState, useRef } from "react";
-import { useInView } from "framer-motion";
-import HH from "../Images/teamwork-concept-landing-page.png";
+import { motion } from "framer-motion"
+import { useEffect, useState, useRef } from "react"
+import { useInView } from "framer-motion"
+import HH from "../Images/teamwork-concept-landing-page.png"
 
 const stats = [
   { value: 101, label: "Active Clients", desc: "consequuntur quae dired para mesta" },
   { value: 200, label: "Projects Done", desc: "adipisci atque cum quia aut" },
   { value: 5, label: "Glorious Years", desc: "aut commodi quaerat" },
   { value: 8, label: "Team Advisors", desc: "aut commodi quaerat" },
-];
+]
 
 const StatItem = ({ value, label, desc, index, trigger }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   useEffect(() => {
-    if (!trigger) return;
+    if (!trigger) return
 
-    let start = 0;
-    const end = value;
-    const duration = 1000;
-    const step = Math.ceil(end / 60);
+    let start = 0
+    const end = value
+    const duration = 1000
+    const step = Math.ceil(end / 60)
 
     const interval = setInterval(() => {
-      start += step;
+      start += step
       if (start >= end) {
-        start = end;
-        clearInterval(interval);
+        start = end
+        clearInterval(interval)
       }
-      setCount(start);
-    }, duration / end);
+      setCount(start)
+    }, duration / end)
 
     return () => {
-      clearInterval(interval);
+      clearInterval(interval)
       setCount(0); // Reset when out of view
-    };
-  }, [value, trigger]);
+    }
+  }, [value, trigger])
 
   return (
     <motion.div
@@ -50,12 +50,12 @@ const StatItem = ({ value, label, desc, index, trigger }) => {
         </span>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
 export default function StatsSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "-100px", amount: 0.4 });
+  const ref = useRef(null)
+  const isInView = useInView(ref, { margin: "-100px", amount: 0.4 })
 
   return (
     <div
@@ -78,5 +78,5 @@ export default function StatsSection() {
         ))}
       </div>
     </div>
-  );
+  )
 }

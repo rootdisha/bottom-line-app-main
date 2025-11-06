@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 
 const teamImages = [
   "TeamImg/WhatsApp Image 2025-06-03 at 11.26.34 AM.jpeg",
@@ -8,38 +8,38 @@ const teamImages = [
   "TeamImg/WhatsApp Image 2025-06-03 at 11.26.58 AM (2).jpeg",
   "TeamImg/WhatsApp Image 2025-06-03 at 11.26.59 AM.jpeg",
   "TeamImg/WhatsApp Image 2025-06-03 at 11.26.58 AM.jpeg",
-];
+]
 
 export default function TeamCarousel() {
-  const [current, setCurrent] = useState(0);
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [slidesToShow, setSlidesToShow] = useState(1);
+  const [current, setCurrent] = useState(0)
+  const [selectedImage, setSelectedImage] = useState(null)
+  const [slidesToShow, setSlidesToShow] = useState(1)
 
   // Detect screen size → decide slides to show
   useEffect(() => {
     const updateSlides = () => {
       if (window.innerWidth >= 1024) {
-        setSlidesToShow(3);
+        setSlidesToShow(3)
       } else if (window.innerWidth >= 640) {
-        setSlidesToShow(2);
+        setSlidesToShow(2)
       } else {
-        setSlidesToShow(1);
+        setSlidesToShow(1)
       }
-    };
-    updateSlides();
-    window.addEventListener("resize", updateSlides);
-    return () => window.removeEventListener("resize", updateSlides);
-  }, []);
+    }
+    updateSlides()
+    window.addEventListener("resize", updateSlides)
+    return () => window.removeEventListener("resize", updateSlides)
+  }, [])
 
-  const totalSlides = Math.ceil(teamImages.length / slidesToShow);
+  const totalSlides = Math.ceil(teamImages.length / slidesToShow)
 
   // Auto slide every 4s
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % totalSlides);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [totalSlides]);
+      setCurrent((prev) => (prev + 1) % totalSlides)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [totalSlides])
 
   return (
     <section className="bg-[#0F0F0F] py-20 px-6">
@@ -124,7 +124,7 @@ export default function TeamCarousel() {
                   className="absolute -top-10 right-0 text-white text-4xl font-bold hover:text-red-400 transition"
                   onClick={() => setSelectedImage(null)}
                 >
-                  &times;
+                  &times
                 </button>
               </motion.div>
             </motion.div>
@@ -132,5 +132,5 @@ export default function TeamCarousel() {
         </AnimatePresence>
       </div>
     </section>
-  );
+  )
 }

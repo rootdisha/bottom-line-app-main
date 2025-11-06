@@ -1,18 +1,18 @@
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
-import AA from "../Brand/client-1.jpg";
-import AB from "../Brand/client-2.jpg";
-import AC from "../Brand/client-3.jpg";
-import AD from "../Brand/client-4.jpg";
-import AE from "../Brand/client-5.jpg";
-import AF from "../Brand/client-6.jpg";
-import AG from "../Brand/client-7.jpg";
-import AH from "../Brand/client-8.jpg";
-import AI from "../Brand/client-9.jpg";
-import AJ from "../Brand/client-10.jpg";
-import AK from "../Brand/client-11.jpg";
-import AL from "../Brand/client-12.jpg";
-import AM from "../Brand/client-13.jpg";
+import { motion, useAnimation } from "framer-motion"
+import { useEffect } from "react"
+import AA from "../Brand/client-1.jpg"
+import AB from "../Brand/client-2.jpg"
+import AC from "../Brand/client-3.jpg"
+import AD from "../Brand/client-4.jpg"
+import AE from "../Brand/client-5.jpg"
+import AF from "../Brand/client-6.jpg"
+import AG from "../Brand/client-7.jpg"
+import AH from "../Brand/client-8.jpg"
+import AI from "../Brand/client-9.jpg"
+import AJ from "../Brand/client-10.jpg"
+import AK from "../Brand/client-11.jpg"
+import AL from "../Brand/client-12.jpg"
+import AM from "../Brand/client-13.jpg"
 
 const brands = [
   { src: AA, alt: "Michelin" },
@@ -28,10 +28,10 @@ const brands = [
   { src: AK, alt: "BMW" },
   { src: AL, alt: "BMW" },
   { src: AM, alt: "BMW" },
-];
+]
 
 export default function BrandLogos() {
-  const controls = useAnimation();
+  const controls = useAnimation()
 
   useEffect(() => {
     controls.start({
@@ -41,10 +41,10 @@ export default function BrandLogos() {
         duration: 40, // Slightly slower for more brands
         ease: "linear",
       },
-    });
-  }, [controls]);
+    })
+  }, [controls])
 
-  const handleMouseEnter = () => controls.stop();
+  const handleMouseEnter = () => controls.stop()
   const handleMouseLeave = () =>
     controls.start({
       x: "-100%",
@@ -53,7 +53,7 @@ export default function BrandLogos() {
         duration: 40,
         ease: "linear",
       },
-    });
+    })
 
   return (
     <div className="overflow-hidden py-8 bg-white">
@@ -74,5 +74,5 @@ export default function BrandLogos() {
         ))}
       </motion.div>
     </div>
-  );
+  )
 }

@@ -25,6 +25,7 @@ npm run lint
 ## Tech Stack
 
 - **Framework**: React 19.1.0 with Vite 6.3.5
+- **Language**: TypeScript (strict mode enabled)
 - **Routing**: React Router DOM 7.6.1
 - **Styling**: Tailwind CSS 4.1.7 (configured via Vite plugin)
 - **Animations**:

@@ -1,4 +1,4 @@
-import React from 'react'
+import { FC } from 'react'
 import { Route, Routes,BrowserRouter } from 'react-router-dom'
 import Home from '../Pages/Home'
 import Nav from '../Components/Nav'

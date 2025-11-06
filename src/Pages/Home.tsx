@@ -1,11 +1,10 @@
-import React from 'react'
 import Header from '../Components/Header'
-import ServicesGrid from '../Components/ServicesGrid.jsx'
+import ServicesGrid from '../Components/ServicesGrid'
 import Aboutus from "../Components/Aboutus"
 import Brand from "../Components/Brand"
 import StatsSection from "../Components/StatsSection"
-import Testimonial from "../Components/Testimonial.jsx"
-import ContactFAQ from "../Components/ContactFAQ.jsx"
+import Testimonial from "../Components/Testimonial"
+import ContactFAQ from "../Components/ContactFAQ"
 
 const Home = () => {
   return (

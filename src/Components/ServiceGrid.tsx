@@ -1,7 +1,7 @@
-// components/ServiceGrid.jsx
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+// components/ServiceGrid"
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import { useEffect } from "react"
 import {
   FaShieldAlt,
   FaSyncAlt,
@@ -12,7 +12,7 @@ import {
   FaTasks,
   FaCloud,
   FaDesktop,
-} from "react-icons/fa";
+} from "react-icons/fa"
 
 const services = [
   { id: "01", title: "Protection for Existing IT Investments", desc: "Safeguard your current IT infrastructure while enabling future growth.", icon: <FaShieldAlt /> },
@@ -24,19 +24,19 @@ const services = [
   { id: "07", title: "Centralized Management", desc: "Enforce policies and manage infrastructure from a single console.", icon: <FaTasks /> },
   { id: "08", title: "Scalable Hybrid Cloud", desc: "Easily extend resources on-premises and into public cloud.", icon: <FaCloud /> },
   { id: "09", title: "Proven Enterprise Workloads", desc: "Support VDI, collaboration tools, analytics & core enterprise apps.", icon: <FaDesktop /> },
-];
+]
 
 const Card = ({ id, title, desc, icon }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.3 });
+  const controls = useAnimation()
+  const [ref, inView] = useInView({ threshold: 0.3 })
 
   useEffect(() => {
     if (inView) {
-      controls.start({ opacity: 1, y: 0 });
+      controls.start({ opacity: 1, y: 0 })
     } else {
-      controls.start({ opacity: 0, y: 50 });
+      controls.start({ opacity: 0, y: 50 })
     }
-  }, [inView, controls]);
+  }, [inView, controls])
 
   return (
     <motion.div
@@ -53,8 +53,8 @@ const Card = ({ id, title, desc, icon }) => {
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
       <p className="text-sm text-gray-600">{desc}</p>
     </motion.div>
-  );
-};
+  )
+}
 
 export default function ServiceGrid() {
   return (
@@ -82,5 +82,5 @@ export default function ServiceGrid() {
         ))}
       </div>
     </div>
-  );
+  )
 }

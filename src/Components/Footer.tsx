@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FC } from 'react'
+import { Link } from 'react-router-dom'
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 
 const Footer = () => {
   return (
@@ -51,7 +51,7 @@ const Footer = () => {
         © {new Date().getFullYear()} MySite. All rights reserved.
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

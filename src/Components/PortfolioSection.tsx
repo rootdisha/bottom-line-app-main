@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-import { useState, useRef } from "react";
-import { useInView } from "framer-motion";
+import { motion } from "framer-motion"
+import { useState, useRef } from "react"
+import { useInView } from "framer-motion"
 
 const portfolioItems = [
   { title: "App 1", category: "App", image: "/images/app1.jpg" },
@@ -15,9 +15,9 @@ const portfolioItems = [
   { title: "Product 3", category: "Product", image: "/images/product3.jpg" },
   { title: "Branding 3", category: "Branding", image: "/images/branding3.jpg" },
   { title: "Books 3", category: "Books", image: "/images/books3.jpg" },
-];
+]
 
-const categories = ["All", "App", "Product", "Branding", "Books"];
+const categories = ["All", "App", "Product", "Branding", "Books"]
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -26,7 +26,7 @@ const cardVariants = {
     y: 0,
     transition: { delay: i * 0.1, duration: 0.5 },
   }),
-};
+}
 
 const PortfolioCard = ({ item, index, trigger }) => (
   <motion.div
@@ -46,17 +46,17 @@ const PortfolioCard = ({ item, index, trigger }) => (
       <p className="text-gray-500 text-sm">Lorem ipsum dolor sit amet.</p>
     </div>
   </motion.div>
-);
+)
 
 export default function PortfolioSection() {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { amount: 0.2, once: false });
+  const [activeCategory, setActiveCategory] = useState("All")
+  const sectionRef = useRef(null)
+  const isInView = useInView(sectionRef, { amount: 0.2, once: false })
 
   const filteredItems =
     activeCategory === "All"
       ? portfolioItems
-      : portfolioItems.filter((item) => item.category === activeCategory);
+      : portfolioItems.filter((item) => item.category === activeCategory)
 
   return (
     <section ref={sectionRef} className="px-4 md:px-8 py-16 bg-gray-100 overflow-hidden font-[poppins]">
@@ -88,5 +88,5 @@ export default function PortfolioSection() {
         ))}
       </div>
     </section>
-  );
+  )
 }
