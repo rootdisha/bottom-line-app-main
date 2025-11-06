@@ -8,9 +8,11 @@ export const Allrouters = () => {
   return (
     <div>
         <Nav />
-        <Routes>
-            <Route path='/' element={<Home />} />
-        </Routes>
+        <div className="pt-16">
+          <Routes>
+              <Route path='/' element={<Home />} />
+          </Routes>
+        </div>
         <Footer />
     </div>
   )

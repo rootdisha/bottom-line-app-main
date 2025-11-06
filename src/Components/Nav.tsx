@@ -24,13 +24,13 @@ const StickyNavbar = () => {
       variants={navVariants}
       initial="hidden"
       animate="visible"
-      className="sticky top-0 z-50 bg-white/70 backdrop-blur-md shadow"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-md shadow"
     >
-      <div className="max-w-8xl mx-auto px-4 py-5 sm:px-6 lg:px-8  font-[poppins]">
-        <div className="flex justify-between items-center ">
-          <div className="text-xl font-bold text-blue-600">
-            <img src={logo} className='w-55' alt="" />
-          </div>
+      <div className="max-w-8xl mx-auto px-4 py-2 sm:px-6 lg:px-8 font-[poppins]">
+        <div className="flex justify-between items-center">
+          <Link to="/" className="text-xl font-bold text-blue-600">
+            <img src={logo} className='w-40 h-auto' alt="Bottomline Technologies" />
+          </Link>
 
           <div className="md:hidden">
             <button onClick={toggleMenu} className="text-gray-700 text-2xl">
@@ -39,8 +39,6 @@ const StickyNavbar = () => {
           </div>
 
           <div className={`md:flex md:items-center md:space-x-6 ${menuOpen ? 'block' : 'hidden'} md:block`}>
-            <Link to="/" className="block py-2 text-gray-700 hover:text-blue-600">Home</Link>
-
             {/* Solutions Dropdown */}
             <div className="relative group">
               <button
