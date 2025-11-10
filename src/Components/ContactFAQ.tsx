@@ -4,9 +4,26 @@ import { useState } from "react"
 export default function ContactFAQ() {
   const [openIndex, setOpenIndex] = useState(null)
   const faqs = [
-    "How can I tell if using AI is the right solution for my problem?",
-    "How long does an AI solution take to implement?",
-    "Will we need to make changes in our teams?"
+    {
+      question: "What is Hyper Converged Infrastructure and how can it benefit my business?",
+      answer: "HCI combines compute, storage, and networking into a single integrated solution, simplifying IT operations and reducing total cost of ownership while improving scalability."
+    },
+    {
+      question: "How long does a typical IT infrastructure migration take?",
+      answer: "Migration timelines vary based on the scope and complexity of your infrastructure. Our team works efficiently to minimize disruption while ensuring data security and integrity throughout the process."
+    },
+    {
+      question: "Do you provide ongoing support after implementation?",
+      answer: "Yes, we offer 24/7 monitoring and maintenance services to ensure your IT infrastructure continues to run smoothly. Our team is always available to assist with any issues or optimizations."
+    },
+    {
+      question: "What industries do you serve?",
+      answer: "We serve hundreds of clients across various industries, providing tailored IT infrastructure solutions that meet specific business requirements and compliance standards."
+    },
+    {
+      question: "How do you ensure data security during migrations and implementations?",
+      answer: "We follow strict security protocols and use industry-leading tools to protect your data. Our comprehensive approach includes encryption, secure transfer methods, and thorough testing at every stage."
+    }
   ]
 
   return (
@@ -72,14 +89,14 @@ Chennai, Tamil Nadu 600101
         </h2>
 
         <div className="max-w-2xl mx-auto space-y-4 text-left">
-          {faqs.map((q, i) => (
+          {faqs.map((faq, i) => (
             <div
               key={i}
               className="border-b border-gray-200 pb-3 cursor-pointer"
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
             >
               <div className="flex justify-between items-center">
-                <p className="font-medium">{q}</p>
+                <p className="font-medium">{faq.question}</p>
                 <span>{openIndex === i ? "−" : "+"}</span>
               </div>
               {openIndex === i && (
@@ -89,7 +106,7 @@ Chennai, Tamil Nadu 600101
                   transition={{ duration: 0.3 }}
                   className="mt-2 text-gray-600 text-sm"
                 >
-                  This is a placeholder answer. You can replace this with actual FAQ answers as needed.
+                  {faq.answer}
                 </motion.p>
               )}
             </div>
